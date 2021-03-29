@@ -226,3 +226,10 @@ console.log("script end");
 // async1 end
 // promise2
 // setTimeout
+
+# 判断是否是数组 arr
+
+1.Array.isArray(arr)
+2.arr instanceof Array
+3.Array.prototype.isPrototypeOf(arr)
+4.Object.prototype.toString(arr) === '[object Array]'
