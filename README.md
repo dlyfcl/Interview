@@ -233,3 +233,22 @@ console.log("script end");
 2.arr instanceof Array
 3.Array.prototype.isPrototypeOf(arr)
 4.Object.prototype.toString(arr) === '[object Array]'
+
+# eslint不让它检测某段代码
+
+单行跳过
+// eslint-disable-line  需要跳过检测的行在代码后面加上这个
+
+多行跳过
+/* eslint-disable */
+export function getAddressByLngLat (lng, lat) {
+  return new Promise((resolve) => {
+    let myGeo = new BMap.Geocoder()
+    myGeo.getLocation(new BMap.Point(lng, lat), function (result) {
+      if (result) {
+        resolve(result)
+      }
+    })
+  })
+}
+/* eslint-enable */
