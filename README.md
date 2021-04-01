@@ -252,3 +252,8 @@ export function getAddressByLngLat (lng, lat) {
   })
 }
 /* eslint-enable */
+
+# for of || for in
+
+for of 循环数组得到数组的值，for in得到数组的index
+for of 不能循环对象， for in循环对象得到key
