@@ -257,3 +257,8 @@ export function getAddressByLngLat (lng, lat) {
 
 for of 循环数组得到数组的值，for in得到数组的index
 for of 不能循环对象， for in循环对象得到key
+
+# 关于闭包
+
+闭包是能够读取其他函数内部变量的函数。
+使用场景：setTimeout 回调函数 防抖函数 封装私有变量
