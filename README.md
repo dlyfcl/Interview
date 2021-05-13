@@ -262,3 +262,16 @@ for of 不能循环对象， for in循环对象得到key
 
 闭包是能够读取其他函数内部变量的函数。
 使用场景：setTimeout 回调函数 防抖函数 封装私有变量
+
+# vue的nextTick原理
+
+作用： 它可以在DOM更新完毕之后执行一个回调
+使用场景： vue中异步加载数据，数据更新 => dom更新后才能进行 scroll-better 的初始化操作。
+nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作。vue里面有一个watcher，用于观察数据的变化，然后更新dom，vue里面并不是每次数据改变都会触发更新dom，而是将这些操作都缓存在一个队列，在一个事件循环结束之后，刷新队列，统一执行dom更新操作。
+vue用异步队列的方式来控制DOM更新和nextTick回调先后执行
+micro-task因为其高优先级特性，能确保队列中的微任务在一次事件循环前被执行完毕
+因为兼容性问题，vue不得不做了microtask向macrotask的降级方案
+
+# vDom的原理
+
+# vue中的方法变异是为什么
